@@ -8,7 +8,7 @@ def run():
 
     # STEP 1
     # image_processing 테이블의 prediction_result IS NULL 인 ROW 1 개 조회 - num 갖여오기
-    data=get_train_data()
+    data=db.get_train_data()
 
     if data==None:
         return None
