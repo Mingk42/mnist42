@@ -56,8 +56,6 @@ async def create_upload_file(file: UploadFile):
         f.write(img)
 
     ##### DB PROCESS #################################################
-    connection = db.connect()
-
     db.mk_image_processing()        # DB 없으면 생성
 
     sql = f"INSERT INTO image_processing(file_name, file_path, request_time, request_user) VALUES ('{file.filename}', '{file_full_path}', '{dt}', 'n11')"

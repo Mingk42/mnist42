@@ -90,3 +90,15 @@ def dml(sql:str):
         rowcnt=cursor.rowcount
 
     return rowcnt
+
+
+def get_train_data():
+    connection = connect()
+
+    with connection:
+        with connection.cursor() as cursor:
+            sql = "SELECT num FROM image_processing WHERE prediction_result IS NULL"
+            cursor.execute(sql, )
+            result = cursor.fetchone()
+
+    return result["num"]

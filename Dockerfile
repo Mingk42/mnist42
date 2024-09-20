@@ -12,6 +12,6 @@ RUN crontab /etc/cron.d/ml-work-cronjob
 RUN apt install -y vim
 
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir --upgrade git+https://github.com/Mingk42/mnist42.git@0.5.1
+RUN pip install --no-cache-dir --upgrade git+https://github.com/Mingk42/mnist42.git@v0.4.0/worker
 
 CMD ["sh", "run.sh"]

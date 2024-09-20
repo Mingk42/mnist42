@@ -16,6 +16,9 @@ requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
 
+[project.scripts]
+ml-worker = 'mnist.worker:run'
+
 [tool.pdm]
 distribution = true
 
