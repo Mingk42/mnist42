@@ -1,7 +1,7 @@
 from tz_kst import now
 import random
 
-from mnist.db import get_train_data, dml
+from mnist import db
 
 def run():
     """image_processing 테이블을 읽어서 가장 오래된 요청 하나씩을 처리"""
@@ -25,7 +25,7 @@ def run():
     SET prediction_model='{prediction_model}', prediction_result='{pred}', prediction_time='{prediction_time}'
     WHERE num={data}
     """
-    row_cnt= dml(sql, )
+    row_cnt= db.dml(sql, )
 
 
     # STEP 3
