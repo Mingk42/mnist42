@@ -7,8 +7,8 @@ from mnist import db
 
 def run():
     """image_processing 테이블을 읽어서 가장 오래된 요청 하나씩을 처리"""
-    print(f"LINE_TOKEN ::: {os.getenv('LINE_TOKEN')}")
-    print(f"DB_IP ::: {os.getenv('DB_IP')}",end="\n\n")
+#     print(f"LINE_TOKEN ::: {os.getenv('LINE_TOKEN')}")
+#     print(f"DB_IP ::: {os.getenv('DB_IP')}",end="\n\n")
 
     # STEP 1
     # image_processing 테이블의 prediction_result IS NULL 인 ROW 1 개 조회 - num 갖여오기
