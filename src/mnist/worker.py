@@ -1,14 +1,18 @@
-from tz_kst import now
 import random
+import os
+import requests
 
+from tz_kst import now
 from mnist import db
 
 def run():
     """image_processing 테이블을 읽어서 가장 오래된 요청 하나씩을 처리"""
+    print(f"LINE_TOKEN ::: {os.getenv('LINE_TOKEN')}")
+    print(f"DB_IP ::: {os.getenv('DB_IP')}",end="\n\n")
 
     # STEP 1
     # image_processing 테이블의 prediction_result IS NULL 인 ROW 1 개 조회 - num 갖여오기
-    data=db.get_train_data()
+    data= db.get_train_data()
 
     if data==None:
         return None
@@ -30,8 +34,6 @@ def run():
 
     # STEP 3
     # LINE 으로 처리 결과 전송
-    import os
-    import requests
 
     headers = {
         'Authorization': 'Bearer ' + os.getenv('LINE_TOKEN', ''),
