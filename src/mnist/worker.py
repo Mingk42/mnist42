@@ -43,4 +43,10 @@ def run():
 
     response = requests.post('https://notify-api.line.me/api/notify', headers=headers, files=files)
 
-    print(prediction_time, pred)
+    print(f"[{prediction_time}] {data}번째 이미지의 예측결과는 {pred}입니다.")
+
+    return {
+        "prediction_time":prediction_time
+        "train_data_nth":data
+        "pred":pred
+    }

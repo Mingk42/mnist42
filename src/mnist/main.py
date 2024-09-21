@@ -2,9 +2,7 @@ from typing import Annotated
 from fastapi import FastAPI, File, UploadFile
 
 import os
-import pymysql.cursors
 from tz_kst import now
-
 from mnist import db
 
 app = FastAPI()

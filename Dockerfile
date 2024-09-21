@@ -9,8 +9,7 @@ RUN apt update
 RUN apt install -y cron
 COPY ml-work-cronjob /etc/cron.d/ml-work-cronjob
 RUN crontab /etc/cron.d/ml-work-cronjob
-RUN apt install -y vim
-RUN alias ll="ls -al"
+#RUN apt install -y vim
 
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade git+https://github.com/Mingk42/mnist42.git@v0.4.0/worker
