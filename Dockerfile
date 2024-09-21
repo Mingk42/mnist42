@@ -14,7 +14,4 @@ RUN apt install -y vim
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade git+https://github.com/Mingk42/mnist42.git@v0.4.0/worker
 
-RUN echo DB_IP=172.17.0.1 >> /etc/environment
-RUN echo LINE_TOKEN="rPekL6ew1Dhn9DmR5LTxStLllTziY48ILZOjHqsEc10" >> /etc/environment
-
 CMD ["sh", "run.sh"]

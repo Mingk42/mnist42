@@ -101,4 +101,7 @@ def get_train_data():
             cursor.execute(sql, )
             result = cursor.fetchone()
 
-    return result["num"]
+    if result:
+        return result["num"]
+    else:
+        return None
