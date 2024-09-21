@@ -46,7 +46,7 @@ def run():
     print(f"[{prediction_time}] {data}번째 이미지의 예측결과는 {pred}입니다.")
 
     return {
-        "prediction_time":prediction_time
-        "train_data_nth":data
+        "prediction_time":prediction_time,
+        "train_data_nth":data,
         "pred":pred
     }
