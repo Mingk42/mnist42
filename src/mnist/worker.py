@@ -15,7 +15,7 @@ def run():
     data= db.get_train_data()
 
     if data==None:
-        print(f"[{prediction_time}] 예측할 데이터가 없습니다.")
+        print(f"[{now()}] 예측할 데이터가 없습니다.")
         return None
 
     # STEP 2
