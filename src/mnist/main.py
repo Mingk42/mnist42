@@ -45,7 +45,7 @@ async def create_upload_file(file: UploadFile):
     import uuid
 
     file_name = file.filename
-    upload_dir = f"{os.path.dirname(os.path.abspath(__file__))}/img/"
+    upload_dir = os.getenv("UPLOAD_PATH",f"{os.path.dirname(os.path.abspath(__file__))}/img/")
     os.makedirs(upload_dir,exist_ok=True)
 
     file_full_path = os.path.join(upload_dir, f"{uuid.uuid4()}.{file_ext}")
