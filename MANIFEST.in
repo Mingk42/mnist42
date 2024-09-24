@@ -1,1 +1,1 @@
-recursive-include src/mnist/model/
+recursive-include src/mnist/model/*
