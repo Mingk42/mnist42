@@ -22,14 +22,24 @@ def run():
     # STEP 2
     # RANDOM 으로 0 ~ 9 중 하나 값을 prediction_result 컬럼에 업데이트
     # 동시에 prediction_model, prediction_time 도 업데이트
-    pred = random.randint(0,9)
-    prediction_model="randint"
+#     pred = random.randint(0,9)
+#     prediction_model="randint"
+#     prediction_time=now()
+
+    print(data)
+    print(data["num"])
+
+    from mnist.pred import predict_digit
+    rst=predict_digit(data["file_path"])
+
+    pred = rst
+    prediction_model="mnist240924.keras"
     prediction_time=now()
 
     sql = f"""
     UPDATE image_processing
     SET prediction_model='{prediction_model}', prediction_result='{pred}', prediction_time='{prediction_time}'
-    WHERE num={data}
+    WHERE num={data["num"]}
     """
     row_cnt= db.dml(sql, )
 
@@ -47,12 +57,12 @@ def run():
 #
 #     response = requests.post('https://notify-api.line.me/api/notify', headers=headers, files=files)
 
-    send(f"{data}번째 이미지의 예측결과는 {pred}입니다.")
+    send(f"{data['num']}번째 이미지의 예측결과는 {pred}입니다.")
 
-    print(f"[{prediction_time}] {data}번째 이미지의 예측결과는 {pred}입니다.")
+    print(f"[{prediction_time}] {data['num']}번째 이미지의 예측결과는 {pred}입니다.")
 
     return {
         "prediction_time":prediction_time,
-        "train_data_nth":data,
+        "train_data_nth":data["num"],
         "pred":pred
     }

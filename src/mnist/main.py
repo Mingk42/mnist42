@@ -88,3 +88,6 @@ def read_many(size:int=-1):
 @app.delete("/clear_table")
 def clear_table():
     return db.truncate()
+
+# @app.post("/predImg/")
+# async def predImg(file: UploadFile):
