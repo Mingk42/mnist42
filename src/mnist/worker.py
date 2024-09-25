@@ -30,7 +30,7 @@ def run():
     rst=predict_digit(data["file_path"])
 
     pred = rst
-    prediction_model="mnist240924.keras"
+    prediction_model="mnist240924.keras.n11"
     prediction_time=now()
 
     sql = f"""

@@ -161,7 +161,7 @@ def clear_table():
         - None
 
     - Returns:
-        - DB의 num 값 (dict)
+        - AUTO_INCREMENT: 1 (reseted serial value)
     """
     return db.truncate()
 
