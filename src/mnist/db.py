@@ -24,8 +24,9 @@ def mk_image_processing():
             sql = """
                 -- CREATE OR REPLACE TABLE image_processing (
                 CREATE TABLE IF NOT EXISTS image_processing (
-                    num INT AUTO_INCREMENT PRIMARY KEY COMMENT '시리얼',
+                    num INT AUTO_INCREMENT PRIMARY KEY COMMENT 'serial',
                     file_name VARCHAR(100) NOT NULL COMMENT '원본 파일명',
+                    label VARCHAR(50) NOT NULL COMMENT '정답 레이블',
                     file_path VARCHAR(255) NOT NULL COMMENT '저장 전체 경로 및 변환 파일명',
                     request_time VARCHAR(50) NOT NULL COMMENT '요청시간',
                     request_user VARCHAR(50) NOT NULL COMMENT '요청 사용자',

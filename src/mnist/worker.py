@@ -26,9 +26,6 @@ def run():
 #     prediction_model="randint"
 #     prediction_time=now()
 
-    print(data)
-    print(data["num"])
-
     from mnist.pred import predict_digit
     rst=predict_digit(data["file_path"])
 
