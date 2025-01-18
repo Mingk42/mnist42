@@ -1,12 +1,11 @@
 # mnist
 
-## Pull Request URL : https://github.com/Mingk42/mnist42/pull/1
-#### Require
+### Require
 - [x] WORKER 는 주기적으로 image_processing 테이블을 읽어서 가장 오래된 요청 하나씩을 처리한다.
 - [x] DNN 모델이 없는 상황에서는 일단 0~9 중에서 임의의 값을 image_processing 테이블에 업데이트 한다.
 - [x] WORKER 는 pip install 하면 ml-worker 라는 cmd 로 동작하도록 하고 도커 안에서 crontab 설정으로 3분 마다 동작한다
 
-#### Result
+### Result
 <img src="https://github.com/user-attachments/assets/d0762e32-f057-4165-8f11-5468f4b05620" width=75% />
 <img src="https://github.com/user-attachments/assets/c00c14ca-335d-4840-9666-3dca1b18e000" width=50% />
 
